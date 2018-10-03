@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import VAnimateCss from 'v-animate-css';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import { store } from './store/store.js';
@@ -10,6 +11,8 @@ export const router = new VueRouter({
      routes: routes,
      mode: 'history'
 });
+
+Vue.use(VAnimateCss);
 
 Vue.use(VueResource);
 Vue.use(VueRouter);

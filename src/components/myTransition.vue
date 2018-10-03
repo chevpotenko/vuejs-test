@@ -3,8 +3,8 @@
         <h3>My transition</h3>
         <button v-on:click='show = !show'>Show content</button>
         <transition
-            name='fade'
-            enter-active-class='tada'>
+            name='flipInX'
+            enter-active-class='animated flipInX faster'>
                  <p class="transition-p" v-if="show">content</p>
         </transition>                
     </div>
@@ -14,13 +14,18 @@
     import { bus } from '../main.js';
     export default {    
         name: 'my-transition',
-        data () {
-                return {
+        data() {
+            return {
                 title: 'News',
                 show: false
             }
         },
-        mounted(){}
+        mounted() {
+            this.show = true;
+        },
+        destroyed() {
+            this.show = false;
+        }
     }
 </script>
 
@@ -31,18 +36,13 @@
     .my-transition h2{
         font-size: 1.5em; 
         text-align: left;
-    }
-    .tada, .fade-leave-active {
-        transition: opacity .9s;
-    }
-    .fade-enter, .fade-leave {
-        opacity: 0;
-    }
+    }   
     .transition-p {
         font-size: 1em;
-        height: 1em;
+        height: 3em;
         border-left: 2px solid red;
         padding-left: 20px;
         text-align: left;
+        background: cadetblue;
     }    
 </style>

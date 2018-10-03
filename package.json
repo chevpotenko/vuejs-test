@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "v-animate-css": "0.0.2",
     "vue": "^2.5.11",
     "vue-fullcalendar": "^1.0.9",
     "vue-resource": "^1.3.5",
