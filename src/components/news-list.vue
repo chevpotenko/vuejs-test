@@ -2,7 +2,7 @@
 	<div class="news-list">
 		<h3>{{title}}</h3>
 		<ul>
-			<li v-for="item in list" class="news-item">
+			<li v-for="(item, index) in list" class="news-item" :key="index">
 				<div v-rainbow="'blue'" class="news-title">
 					<router-link v-bind:to="{ name: 'news', params: { id: item.id }}">
 						{{ item.title|toUppercase }}
@@ -31,7 +31,7 @@
 			data: function() {}
 		},
 		mounted() {
-			this.log;
+			this.log('mixins');
 		}
 	};
 </script>
